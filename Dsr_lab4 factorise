@@ -1,0 +1,21 @@
+getwd()
+list.files()
+setwd("D:/DSR LAB")
+getwd()
+list.files()
+grep(".csv",list.files(),value=T)
+churn_data<-read.csv("churn.csv")
+churn_data
+colnames(churn_data)
+churn_data$EstimatedSalary
+estimated_group<-vector(mode="character",length=length(churn_data$EstimatedSalary))
+estimated_group
+estimated_group[churn_data$EstimatedSalary<10000]<-"Low"
+estimated_group[churn_data$EstimatedSalary>=10000 & churn_data$EstimatedSalary<100000 ]<-"Medium"
+estimated_group[churn_data$EstimatedSalary>100000]<-"High"
+estimated_group
+spending_level<-factor(estimated_group,levels=c("Low","Medium","High"),ordered=TRUE)
+spending_level
+churn_data<-cbind(churn_data,spending_level)
+churn_data
+write.csv(churn_data,"D:/DSR LAB/newchurn_data.csv",row.names=TRUE)
