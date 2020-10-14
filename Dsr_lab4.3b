@@ -1,0 +1,6 @@
+intnum=c(10,20,30)
+string1=c("Water","lemon","juice")
+realnum=c(23.3,44.5,89.0)
+list1=list(intnum,string1,realnum)
+names(list1)=c("integer number","string","real number")
+list1
