@@ -1,0 +1,9 @@
+emp_Id <- c(1:10)
+salary<-sample.int(100,10)
+salary
+marital_status<-c("married","married","bachalore","bachalore","married","married","bacalore","married","bachalore","married")
+marital_status
+df<-data.frame(emp_Id,salary,marital_status)
+df
+boxplot(salary ~ marital_status,data = df)
+boxplot
